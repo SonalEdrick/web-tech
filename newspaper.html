@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper</title>
+    <style>
+        #conatiner{
+            width:100%;
+            overflow: auto;
+            margin: auto;
+            background-image: linear-gradient(rgb(179, 179, 218),rgb(172, 190, 237));
+        }
+        header{
+            text-align: center;
+        }
+        nav ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+            overflow: hidden;
+        }
+        nav li{
+            float: left;
+        }
+        nav li a{
+            display:block;
+            text-decoration: none;
+            color:"white";
+            padding: 15px 30px;
+            background-color: bisque;
+            text-align: center;
+        }
+        nav li a:hover{
+            background-color: cornflowerblue;
+        }
+        section{
+            width: 60%;
+            margin: 5px;
+            float: left;
+            padding: 5px;
+            border: 1pt solid black;
+            background-color: rgb(228, 230, 172);
+        }
+        aside{
+            display: inline-block;
+            margin: 5px;
+            padding: 5px;
+            width: 30%;
+            position: inherit;
+            border: 1pt solid black;
+            vertical-align: top;
+        }
+        footer{
+            margin-top: 10px;
+            width: 95%;
+            margin: auto;
+            height: 30px;
+            background-color: azure;
+            text-align: center;
+        }
+        figure{
+            float: left;
+            margin-top: 0;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1pt solid black;
+            background-color: blanchedalmond;
+        }
+        article{
+            height: 200px;
+            overflow: auto;
+            text-align: justify;
+            background-color: cornsilk;
+            margin: 5px;
+            padding: 5px;
+        }
+        h1,h2{
+            color: black;
+            text-shadow: 1ps 1ps rgb(172, 241, 233);
+        }
+        aside{
+            border: dotted 2px rgb(137, 197, 137);
+            background-image: radial-gradient(rgb(124, 206, 124), rgb(209, 213, 84));
+        }
+        a{
+            text-shadow: none;
+        }
+        ul{
+            list-style: square;
+        }
+        hgroup{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <img src="dh.png" alt="The Deccan Herald" width="500px"/>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">International</a></li>
+                    <li><a href="#">National</a></li>
+                    <li><a href="#">State</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Entertainment</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h1>International news</h1>
+            <article>
+                <h2>One dead, dozens hurt in Israel truck ramming</h2>
+                <figure>
+                    <img src="https://th-i.thgim.com/public/incoming/6clvgt/article68805697.ece/alternates/SQUARE_355/IMG_Truck_Rams_Bus_Stop__2_1_H7DGT7UD.jpg" width=200px />
+                </figure>
+                Police did not immediately say whether the incident, near the Mossad spy agency's headquarters and other Israeli intelligence sites, was an attack or an accident.A driver rammed his truck into a crowd of people at a bus stop in central Israel on Sunday (October 27, 2024), killing a man and injuring more than two dozen people, medics and police said.   
+            </article>
+            <article>
+                <h2>Philippine town in the shadow of a volcano is hit by landslides it never expected</h2>
+                <figure>
+                    <img src="https://th-i.thgim.com/public/incoming/ripx2x/article68805766.ece/alternates/LANDSCAPE_1200/Philippines_Landslides_46439.jpg"width=200px/>
+                </figure>
+                Tropical Storm Trami triggers landslides in the Philippines, highlighting the country’s vulnerability to climate change-induced disasters
+            </article>
+        </section>
+        <section id="nat">
+            <h1>National news</h1>
+            <article>
+                <h2>PM Modi, Spain PM in Gujarat LIVE: Leaders vow to improve bilateral ties after inaugurating C-295 manufacturing hub in Vadodara</h2>
+                <figure>
+                    <img src="https://th-i.thgim.com/public/incoming/jegvwc/article68805928.ece/alternates/LANDSCAPE_1200/PTI10_28_2024_000139B.jpg" width=200px/>
+                </figure>
+                India-Spain decides to celebrate 2026 as India-Spain year of culture, tourism and AI, during their bilateral talk at Laxmi Vilas Palace in Vadodara. This took place right after both Prime Ministers inaugurated the Tata Aircrafts Complex at the Tata Advanced Systems Limited Campus in Vadodara to manufacture the C-295 aircraft.
+            </article>
+            <article>
+                <h2>In poll-bound Maharashtra, Jaishankar lauds BJP government for investment, export growth</h2>
+                <figure>
+                    <img src="https://th-i.thgim.com/public/incoming/eveqft/article68804341.ece/alternates/LANDSCAPE_1200/20241027102L.jpg" width=200px/>
+                </figure>
+                External Affairs Minister S. Jaishankar on Sunday said India and China had agreed to resume patrolling and disengagement in Depsang and Demchok, ending the stand-off in eastern Ladakh.            
+            </article>
+        </section>
+        <section id="sport">
+            <h1>Sports news</h1>
+            <article>
+                <h2>Verstappen reflects on his penalties from Norris battle in Mexico as he highlights 'biggest problem'</h2>
+                <figure>
+                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_960,q_auto/t_16by9North/f_auto/q_auto/trackside-images/2024/F1_Grand_Prix_of_Mexico/2181402372" width=200px/>
+                </figure>
+                Max Verstappen gave a nonchalant response when quizzed after the Mexico City Grand Prix about the two 10-second time penalties he received for his moves on Lando Norris during another close battle between the title rivals.
+            </article>
+            <article>
+                <h2>DRIVER OF THE DAY: Supreme Sainz drive earns your Mexico City vote</h2>
+                <figure>
+                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_960,q_auto/f_auto/q_auto/fom-website/manual/Misc/Driver%20Of%20The%20Day/2024/Sainz" width=200px/>
+                </figure>
+                What a weekend for Carlos Sainz. His first pole position of the year on Saturday and then a superb drive for his second win of the season on Sunday. His time at Ferrari may be drawing to a close, but the Spaniard is certainly showing them what they'll be missing when he departs for Williams in 2025. Here’s how the voting broke down…
+            </article>
+        </section>
+        <aside>
+            <hgroup>
+                <h3><a href="#">Deccan Herald Exclusive</a></h3>
+                <h3><a href="#nat">National</a></h3>
+                <h3><a href="#sport">Sports</a></h3>
+            </hgroup>
+            <figure>
+                <img src="q1.jpg" width="250ps"/>
+            </figure>
+            <figure>
+                <img src="q2.jpg" width="250ps"/>
+            </figure>
+            <figure>
+                <img src="q3.jpg" width="250ps"/>
+            </figure>
+        </aside>
+    </div>
+    <footer>
+        @TheDeccanHerald | Department of CSE | 2024-2025
+    </footer>
+</body>
+</html>

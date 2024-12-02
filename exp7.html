@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS, JSON, CSV</title>
+    <style>
+        div{width:600px;
+        height:150px;
+        border:solid 1pt burlywood;
+        padding:15px;
+        margin:10px;
+    }
+    </style>
+</head>
+<body>
+    <h1>JS, JSON, CSV</h1>
+    <h2>Converting JSON to Javascript Object</h2>
+    <div id="jsonToJS"></div>
+    
+    <script>
+        var text='{"course":{"code":"BCSL504","cname":"Web Tech Lab"}}';
+        var a=JSON.parse(text);
+        document.getElementById("jsonToJS").innerHTML=a.course.code;
+        document.getElementById("jsonToJS").innerHTML+="<br>"+a.course.cname;
+    </script>
+</body>
+</html>

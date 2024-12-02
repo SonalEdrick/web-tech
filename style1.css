@@ -1,0 +1,25 @@
+.table{
+    width:20px;
+    height:20px;
+    border: solid 2pt black;
+    text-align: center;
+}
+.table .i{
+    width: 300px;
+}
+.table .i1{
+    width: 300px;
+}
+.table .data1{
+    background-color: green;
+    width: 300px;
+    height: 200px;
+}
+.table .data2{
+    background-color: yellow;
+    width: 300px;
+    height: 200px;
+}
+.p{
+    text-decoration: none;
+}

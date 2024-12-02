@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+
+        }
+        .container {
+            display: block;
+            max-width: 100%;
+        }
+        .display{
+            font-size: large;
+            cursor: auto;
+        }
+        .btn{
+            border-radius: 10px;
+        }
+        .btn:hover{
+            cursor: pointer;
+        }
+        .display .input1{
+            font-size: 20px;
+            background-color: rgb(171, 171, 235);
+            color: white;
+        }
+        .display .input2{
+            font-size: 20px;
+            background-color: rgb(171, 171, 235);
+            color: white;
+        }
+        .result{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>SIMPLE CALCULATOR</h1>
+    <div class="container">
+        <div class="display">
+            Enter number 1: 
+            <input type="number" id="input1" autofocus/>
+            <br><br>
+            Enter number 2:
+            <input type="number" id="input2"/>
+        </div>
+        <br>
+        <div class="btn">
+            <button type="+" value="sum" onclick="add()">+</button>
+            <button type="-" value="difference" onclick="diff()">-</button>
+            <button type="*" value="product" onclick="mul()">*</button>
+            <button type="/" value="quotent" onclick="div()">/</button>
+            <button type="%" value="remainder" onclick="rem()">rem</button>
+            <button type="^" value="power" onclick="pow()">pow</button>
+            <button type="^2" value="square" onclick="sqr()">x<sup>2</sup></button>
+            <button type="√" value="square root" onclick="sqrt()">√</button>
+        </div>
+        <br>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
+<script>
+    function add(){
+        var n1 = parseInt(document.getElementById("input1").value);
+        var n2 = parseInt(document.getElementById("input2").value);
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input1").focus();
+        }
+        else if(document.getElementById("input2").value == ""){
+            alert("Enter 2nd value");
+            document.getElementById("input2").focus();
+        }
+        else{
+            var result = n1 + n2;
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+    function diff(){
+        var n1 = parseInt(document.getElementById("input1").value);
+        var n2 = parseInt(document.getElementById("input2").value);
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input1").focus();
+        }
+        else if(document.getElementById("input2").value == ""){
+            alert("Enter 2nd value");
+            document.getElementById("input2").focus();
+        }
+        else{
+            var result = n1 - n2;
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+    function mul(){
+        var n1 = parseInt(document.getElementById("input1").value);
+        var n2 = parseInt(document.getElementById("input2").value);
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input1").focus();
+        }
+        else if(document.getElementById("input2").value == ""){
+            alert("Enter 2nd value");
+            document.getElementById("input2").focus();
+        }
+        else{
+            var result = n1 * n2;
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+    function div(){
+        var n1 = parseInt(document.getElementById("input1").value);
+        var n2 = parseInt(document.getElementById("input2").value);
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input1").focus();
+        }
+        else if(document.getElementById("input2").value == ""){
+            alert("Enter 2nd value");
+            document.getElementById("input2").focus();
+        }
+        else{
+            var result = n1 / n2;
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+    function rem(){
+        var n1 = parseInt(document.getElementById("input1").value);
+        var n2 = parseInt(document.getElementById("input2").value);
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input1").focus();
+        }
+        else if(document.getElementById("input2").value == ""){
+            alert("Enter 2nd value");
+            document.getElementById("input2").focus();
+        }
+        else{
+            var result = n1 % n2;
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+    function pow(){
+        var n1 = parseInt(document.getElementById("input1").value);
+        var n2 = parseInt(document.getElementById("input2").value);
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input1").focus();
+        }
+        else if(document.getElementById("input2").value == ""){
+            alert("Enter 2nd value");
+            document.getElementById("input2").focus();
+        }
+        else{
+            var result = Math.pow(n1,n2);
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+    function sqr(){
+        var n1 = parseInt(document.getElementById("input1").value);
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input1").focus();
+        }
+        else{
+            var result = n1*n1;
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+    function sqrt(){
+        var n1 = parseInt(document.getElementById("input1").value);
+        var n2 = 0.5
+
+        if(document.getElementById("input1").value == ""){
+            alert("Enter 1st value");
+            document.getElementById("input").focus();
+        }
+        else{
+            var result = n1**0.5;
+            document.getElementById("result").style.dispaly="block";
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    }
+</script>

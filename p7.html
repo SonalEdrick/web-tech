@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <style>
+        div{
+            width: 600px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 15px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS, JSON, CVS</h1>
+    <h2>Converting JSON text to JavaScript object</h2>
+    <div id="json_to_js"></div>
+
+    <h2>Converting JSON text to JavaScript date object</h2>
+    <div id="json_to_jsdo"></div>
+
+    <h2>Converting JSON to CSV and CSV to JSON</h2>
+    <button onclick="json_to_csv()">Convert Json to Csv</button>
+    <button onclick="csv_to_json()" disabled id="btnCsvtoJson">Convert Csv to Json</button>
+    <div id="json_to_csv"></div>
+
+    <h2>Generating Hash using crypto</h2>
+    <label for="ipstr">Enter a string to hash: </label>
+    <input type="text" id="ipstr" /><br>
+    <button onclick="hash()">Generate hash</button><br>
+    <div id="tahash"></div>
+    
+    
+    <script>
+        var text = '{"course" :{"code":"BCSL504","cname":"web tech lab","start_date":"2024-09-17","end_date":"2024-12-6"}}';
+        
+        var a =JSON.parse(text);
+        document.getElementById("json_to_js").innerHTML=a.course.code;
+        document.getElementById("json_to_js").innerHTML+="<br>"+a.course.cname;
+
+
+        var text = '{"cname":"web tech lab","start_date":"2024-09-17","end_date":"2024-12-6"}';
+        var c =JSON.parse(text);
+        c.start_date = new Date(c.start_date);
+        c.end_date = new Date(c.end_date);
+        var options = {year:'numeric',month:'long', day:'numeric'};
+        document.getElementById("json_to_jsdo").innerHTML=c.start_date.toLocaleDateString("en-gb",options);
+        document.getElementById("json_to_jsdo").innerHTML+="<br>"+c.end_date.toLocaleDateString("en-gb",options);
+
+        function json_to_csv(){
+            var jsondata=[{"id":1,"usn":"1cr22cs224","name":"sonal"},{"id":2,"usn":"1cr22cs225","name":"shastri"}];
+
+            let csv='';
+            const headers = Object.keys(jsondata[0]);
+            csv+= headers.join()+"\n";
+
+            jsondata.forEach(obj =>{
+                const values=headers.map(header =>obj[header]);
+                csv+=values.join()+"\n";
+            });
+
+            document.getElementById("json_to_csv").innerHTML=csv;
+            document.getElementById("btnCsvtoJson").disabled=false;
+        }
+
+        function csv_to_json(){
+            csv = document.getElementById("json_to_csv").innerHTML.trim();
+            const rows = csv.split("\n");
+            const headers = rows[0].split(",");
+            const jsondata=[];
+            for(let i=1;i<rows.length;i++){
+                const values = rows[i].split("'");
+                const obj={};
+                for(let j=0;j<headers.length;j++){
+                    const key = headers[j];
+                    const value = values[j];
+                    obj[key]=value;
+                }
+                jsondata.push(obj);
+            }
+            document.getElementById("json_to_csv").innerHTML=JSON.stringify(jsondata);
+            document.getElementById("btnCsvtoJson").disabled="true";
+        }
+
+        function hash(){
+            const a = document.getElementById("ipstr").value;
+            let hash=0;
+            for(i=0;i<a.length;i++){
+                char = a.charCodeAt(i);
+                hash=((hash<<5)-hash)+char;
+                hash=hash&hash;
+            }
+            document.getElementById("tahash").innerHTML=hash;
+        }
+    </script>
+</body>
+</html>
